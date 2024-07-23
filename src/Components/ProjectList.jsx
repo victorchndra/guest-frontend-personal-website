@@ -12,7 +12,7 @@ const ProjectList = () => {
     
     const projects = [
       {
-        name: 'Sistem Informasi Manajemen Desa',
+        name: '"Citycloud" Management System',
         initial: 'SIMDES',
       },
       {
@@ -20,11 +20,11 @@ const ProjectList = () => {
         initial: '',
       },
       {
-        name: 'Sample #3',
+        name: 'Soon...',
         initial: '',
       },
       {
-        name: 'Sample #4',
+        name: 'Soon...',
         initial: '',
       },
     ]
@@ -38,7 +38,7 @@ const ProjectList = () => {
         <div className="flex flex-col space-y-1 justify-end">
           {projects.map((project, index) => (
             <div key={index} 
-              className={`flex bg-gray-300 px-4 py-2 cursor-pointer ${index == selectedProject && 'h-64 items-end'}`} 
+              className={`flex bg-gray-300 px-4 py-2 cursor-pointer rounded-2xl ${index == selectedProject && 'h-64 items-end'}`} 
               onClick={() => handleActiveProject(index)}>
               <h1 className="font-poppins font-bold uppercase text-white">
                 {project.name}
