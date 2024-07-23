@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 const About = () => {
   return (
     <>
+        <div className="my-bg-image hidden md:block rounded-l-3xl"></div>
         {/* Header */}
         <section className="px-[30px] pt-[30px] pb-[60px] flex flex-col md:px-[90px] md:pt-[30px] md:pb-[90px]">
             <Link to={`/`} className="flex items-center hover:underline">

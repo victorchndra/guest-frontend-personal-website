@@ -10,7 +10,7 @@ const Layout = () => {
         </header>
 
         <main>
-          <div className="my-bg-image hidden md:block rounded-l-3xl"></div>
+          {/* <div className="my-bg-image hidden md:block rounded-l-3xl"></div> */}
           <Outlet />
         </main>
     </>

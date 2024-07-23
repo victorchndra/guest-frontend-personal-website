@@ -6,6 +6,7 @@ import ProjectList from "../Components/ProjectList"
 const Home = () => {
   return (
     <>
+        <div className="my-bg-image hidden md:block rounded-l-3xl"></div>
         {/* About Section */}
         <section className="px-[30px] pt-[30px] flex flex-col md:px-[90px] md:pt-[30px]">
             <Link to={`/about`} className="flex items-center hover:underline">
@@ -31,11 +32,11 @@ const Home = () => {
                 Shared topics, visit my diary blog for more <ChevronsRight className="w-4 h-4"/>
             </Link>
             <div className="flex overflow-x-auto mt-[20px] space-x-4 md:justify-between max-w-max no-scrollbar">
-                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200 ml-[30px] md:ml-[90px]">cardlist1</div>
-                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200">cardlist2</div>
-                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200">cardlist3</div>
-                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200">cardlist4</div>
-                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200 mr-[30px] md:mr-[90px]">cardlist5</div>
+                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200 hover:shadow-xl transition-all duration-300 ml-[30px] md:ml-[90px]">cardlist1</div>
+                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200 hover:shadow-xl transition-all duration-300">cardlist2</div>
+                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200 hover:shadow-xl transition-all duration-300">cardlist3</div>
+                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200 hover:shadow-xl transition-all duration-300">cardlist4</div>
+                <div className="flex justify-center items-center min-w-[240px] h-[300px] bg-gray-200 hover:shadow-xl transition-all duration-300 mr-[30px] md:mr-[90px]">cardlist5</div>
             </div>
         </section>
 

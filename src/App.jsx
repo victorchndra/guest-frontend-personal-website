@@ -3,6 +3,7 @@ import './App.css'
 import Layout from './Pages/Layout'
 import Home from './Pages/Home'
 import About from './Pages/About'
+import Blog from './Pages/Blog'
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
 
             <Route path='/about' element={<About />}/>
 
-            {/* <Route path='/blog' element={<Blog />}/> */}
+            <Route path='/blog' element={<Blog />}/>
           </Route>
         </Routes>
       </BrowserRouter>
