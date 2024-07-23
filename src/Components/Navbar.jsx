@@ -11,7 +11,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='p-[30px] flex flex-col md:justify-between md:flex-row z-0 md:z-[1] bg-white w-full left-0'>
+        <nav className={`p-[30px] flex flex-col md:justify-between md:flex-row z-0 md:z-[1] bg-white w-full left-0 `}>
             <div className="flex font-bold md:pl-0 justify-between items-center">
                 <Link to={`/`} className="hover:cursor-pointer">VICTOR CHANDRA</Link>
                 {showMenu === false 

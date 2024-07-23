@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
         'cormorant-upright': ['Cormorant Upright', 'serif'],
         'cormorant-infant': ['Cormorant Infant', 'serif']
       }
