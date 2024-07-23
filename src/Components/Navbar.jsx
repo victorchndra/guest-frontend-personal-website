@@ -20,7 +20,7 @@ const Navbar = () => {
             </div>
 
             <a href="#" className={`flex items-center justify-center mt-6 md:mt-0 hover:underline ${showMenu === false ? 'hidden md:block' : 'block'}`}>
-                Sharing my thoughts & insights.
+                Share my thoughts & insights.
             </a>
 
             <span className={`flex mt-2 md:mt-0 items-center justify-center ${showMenu === false ? 'hidden md:block' : 'block'}`}>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { ChevronsRight } from "lucide-react"
 import ProjectList from "../Components/ProjectList"
+// import MyImage from "../Images/victor.jpg"
 
 const Home = () => {
   return (
@@ -12,13 +13,16 @@ const Home = () => {
             </Link>
             <div className="w-[250px] md:w-[620px]">
                 <h1 className="font-cormorant-infant text-[32px]">
-                    I’m Victor — a tech-savvy which focuses on Web2 Development as Full Stack Developer
+                    <span className="bg-white">I’m Victor — a tech-savvy which focuses on Web2 Development as Full Stack Developer</span>
                 </h1>
             </div>
         </section>
 
+        {/* Image */}
+        {/* <img src={MyImage} className=" bg-cover object-cover"/> */}
+
         {/* Projects Section */}
-        <section className="px-[30px] pt-[24px] md:px-[90px] md:w-[700px]">
+        <section className="px-[30px] pt-[24px] md:px-[90px] md:w-[650px]">
             <div className="flex flex-col">
                 <ProjectList />
             </div>
