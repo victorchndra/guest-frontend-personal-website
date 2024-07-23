@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'cormorant-upright': ['Cormorant Upright', 'serif'],
+        'cormorant-infant': ['Cormorant Infant', 'serif']
+      }
+    },
   },
   plugins: [],
 }

@@ -1,10 +1,22 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import Layout from './Pages/Layout'
+import Home from './Pages/Home'
 
 function App() {
 
   return (
     <>
-      <h1>tes</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
+
+            {/* <Route path='/about' element={<About />}/> */}
+          </Route>
+        </Routes>
+      </BrowserRouter>
+        
     </>
   )
 }
