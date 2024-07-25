@@ -50,19 +50,7 @@ const Blog = () => {
                 </div>
             </div>
             
-            {/* Pinned Posts */}
-            {/* {pinnedPost.map((post, index) => (
-                <div key={index} className={`hidden md:block font-cormorant-infant px-[30px] mt-8 space-y-6 ${index !== 0 && 'flex-row w-48'}`}>
-                    <div className={`bg-slate-200 h-64 flex flex-col justify-end p-4`}>
-                        <div>[image]</div>
-                        <p className="uppercase text-sm text-red-500 font-bold">{post.category}</p>
-                        <h1 className="font-medium text-2xl">{post.title}</h1>
-                        <p className="text-sm mt-2 text-gray-600">{post.created_at}</p>
-                    </div>
-                </div>
-            ))} */}
-            
-            <div className={`hidden md:block font-cormorant-infant px-[30px] mt-8`}>
+            <div className={`hidden lg:block font-cormorant-infant px-[30px] mt-8`}>
                 <div className={`bg-slate-200 h-72 flex flex-col justify-end p-4`}>
                     {/* <div>[image]</div> */}
                     <p className="uppercase text-sm text-red-500 font-bold">{pinnedPost[0].category}</p>
@@ -73,7 +61,7 @@ const Blog = () => {
 
             <div className="flex px-[30px] space-x-4">
                 {pinnedPost.slice(1).map((post, index) => (
-                    <div key={index} className={`hidden md:block font-cormorant-infant mt-4 space-y-6 w-96`}>
+                    <div key={index} className={`hidden lg:block font-cormorant-infant mt-4 space-y-6 w-96`}>
                         <div className={`bg-slate-200 h-64 flex flex-col justify-end p-4`}>
                             {/* <div>[image]</div> */}
                             <p className="uppercase text-sm text-red-500 font-bold">{post.category}</p>
