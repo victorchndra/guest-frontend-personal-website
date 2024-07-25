@@ -1,41 +1,39 @@
 // import { ChevronsRight } from "lucide-react"
 
+import moment from "moment"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 const Blog = () => {
+
+    const [posts, setPosts] = useState({})
+
+    async function getPosts() {
+        const res = await fetch('/api/blogs')
+        const data = await res.json()
+
+        
+        if(res.ok) {
+            setPosts(data)
+        }
+    }
+
+    useEffect(() => {
+        getPosts()
+    }, [])
+
+    const truncateString = (str, num) => {
+        if (str.length > num) {
+            return str.slice(0, num) + "..."
+        } else {
+            return str
+        }
+    }
 
     const CategoryList = [
         'Technology',
         'Investment',
         'Insights',
-    ]
-
-    const pinnedPost = [
-        {
-            title: '6 Tampilan Awet Muda Luna Maya, Jadi Lady in Red Bergaya Vintage Era 60an dengan Outfit Puluhan Juta',
-            category: 'Technology',
-            created_at: '29/05/2023, 06:00 WIB'
-        },
-        {
-            title: '6 Tampilan Awet Muda Luna Maya...',
-            category: 'Technology',
-            created_at: '29/05/2023, 06:00 WIB'
-        },
-        {
-            title: '6 Tampilan Awet Muda Luna Maya...',
-            category: 'Technology',
-            created_at: '29/05/2023, 06:00 WIB'
-        },
-        {
-            title: '6 Tampilan Awet Muda Luna Maya...',
-            category: 'Technology',
-            created_at: '29/05/2023, 06:00 WIB'
-        },
-        {
-            title: '6 Tampilan Awet Muda Luna Maya...',
-            category: 'Technology',
-            created_at: '29/05/2023, 06:00 WIB'
-        },
     ]
 
     return (
@@ -49,24 +47,33 @@ const Blog = () => {
                     ))}
                 </div>
             </div>
-            
+
             <div className={`hidden lg:block font-cormorant-infant px-[30px] mt-8`}>
                 <div className={`bg-slate-200 h-72 flex flex-col justify-end p-4`}>
                     {/* <div>[image]</div> */}
-                    <p className="uppercase text-sm text-red-500 font-bold">{pinnedPost[0].category}</p>
-                    <h1 className="font-medium text-2xl">{pinnedPost[0].title}</h1>
-                    <p className="text-sm mt-2 text-gray-600">{pinnedPost[0].created_at}</p>
+                    <p className="uppercase text-sm text-red-500 font-bold">Technology</p>
+                    <h1 className="font-medium text-2xl">{posts.data && posts.data[0].title}</h1>
+                    <p className="text-sm mt-2 text-gray-600">{posts.data && moment(posts.data[0].created_at).format('DD/MM/YYYY, HH:mm A')}</p>
                 </div>
             </div>
 
             <div className="flex px-[30px] space-x-4">
-                {pinnedPost.slice(1).map((post, index) => (
+                {/* {pinnedPost.slice(1).map((post, index) => (
                     <div key={index} className={`hidden lg:block font-cormorant-infant mt-4 space-y-6 w-96`}>
                         <div className={`bg-slate-200 h-64 flex flex-col justify-end p-4`}>
-                            {/* <div>[image]</div> */}
+                            <div>[image]</div>
                             <p className="uppercase text-sm text-red-500 font-bold">{post.category}</p>
                             <h1 className="font-medium text-2xl">{post.title}</h1>
                             <p className="text-sm mt-2 text-gray-600">{post.created_at}</p>
+                        </div>
+                    </div>
+                ))} */}
+                {posts.data && posts.data.slice(1,5).map((post) => (
+                    <div key={post.id} className={`hidden lg:block font-cormorant-infant mt-4 space-y-6 w-96`}>
+                        <div className={`bg-slate-200 h-64 flex flex-col justify-end p-4`}>
+                            <p className="uppercase text-sm text-red-500 font-bold">Technology</p>
+                            <h1 className="font-medium text-2xl">{truncateString(post.title, 30)}</h1>
+                            <p className="text-sm mt-2 text-gray-600">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
                         </div>
                     </div>
                 ))}
@@ -82,36 +89,29 @@ const Blog = () => {
                     </select>
                 </div>
 
-                <div className="font-cormorant-infant flex flex-col items-center justify-center px-[30px] md:flex-row mt-4">
+                {posts.data && posts.data.map((post) => (
+                    <div key={post.id} className="font-cormorant-infant flex flex-col items-center justify-center px-[30px] md:flex-row mt-4">
+                        <div className="bg-slate-200 w-full h-48 md:w-[120px] md:h-[100px] md:mr-4">
+                            [image]
+                        </div>
+                        <div className="border-b-[1px] md:self-start mt-2 w-full">
+                            <p className="uppercase text-sm font-bold text-red-500">Technology</p>
+                            <h1 className="font-medium text-2xl">{post.title}</h1>
+                            <p className="text-sm mt-4 mb-1 text-gray-600">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
+                        </div>
+                    </div>
+                ))}
+
+                {/* <div className="font-cormorant-infant flex flex-col items-center justify-center px-[30px] md:flex-row mt-4">
                     <div className="bg-slate-200 w-full h-48 md:w-[120px] md:h-[100px] md:mr-4">
-                        [image]
+                        [image]moment(post.created_at).format('DD/MM/YYYY, HH:mm')
                     </div>
                     <div className="border-b-[1px] md:self-start md:w-full mt-2">
                         <p className="uppercase text-sm font-bold text-red-500">Technology</p>
                         <h1 className="font-medium text-2xl">6 Tampilan Awet Muda Luna Maya, Jadi Lady in Red Bergaya Vintage...</h1>
                         <p className="text-sm mt-4 mb-1 text-gray-600">29/05/2023, 06:00 WIB</p>
                     </div>
-                </div>
-                <div className="font-cormorant-infant flex flex-col items-center justify-center px-[30px] md:flex-row mt-4">
-                    <div className="bg-slate-200 w-full h-48 md:w-[120px] md:h-[100px] md:mr-4">
-                        [image]
-                    </div>
-                    <div className="border-b-[1px] md:self-start md:w-full mt-2">
-                        <p className="uppercase text-sm font-bold text-red-500">Technology</p>
-                        <h1 className="font-medium text-2xl">6 Tampilan Awet Muda Luna Maya, Jadi Lady in Red Bergaya Vintage...</h1>
-                        <p className="text-sm mt-4 mb-1 text-gray-600">29/05/2023, 06:00 WIB</p>
-                    </div>
-                </div>
-                <div className="font-cormorant-infant flex flex-col items-center justify-center px-[30px] md:flex-row mt-4">
-                    <div className="bg-slate-200 w-full h-48 md:w-[120px] md:h-[100px] md:mr-4">
-                        [image]
-                    </div>
-                    <div className="border-b-[1px] md:self-start md:w-full mt-2">
-                        <p className="uppercase text-sm font-bold text-red-500">Technology</p>
-                        <h1 className="font-medium text-2xl">6 Tampilan Awet Muda Luna Maya, Jadi Lady in Red Bergaya Vintage...</h1>
-                        <p className="text-sm mt-4 mb-1 text-gray-600">29/05/2023, 06:00 WIB</p>
-                    </div>
-                </div>
+                </div> */}
             </div>
 
             {/* Footer */}
