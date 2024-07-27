@@ -4,9 +4,9 @@ import { Link } from "react-router-dom"
 const About = () => {
   return (
     <>
-        <div className="my-bg-image hidden md:block rounded-l-3xl"></div>
+        <div className=" hidden md:block rounded-l-3xl" id="my-bg-image"></div>
         {/* Header */}
-        <section className="px-[30px] pt-[30px] pb-[60px] flex flex-col md:px-[90px] md:pt-[30px] md:pb-[90px]">
+        <section className="px-[30px] pt-[30px] pb-[60px] flex flex-col md:px-[90px] md:pt-[30px] md:pb-[90px] relative h-[950px]">
             <Link to={`/`} className="flex items-center hover:underline">
                 <ChevronsLeft className="w-4 h-4"/> Back to Home Page 
             </Link>

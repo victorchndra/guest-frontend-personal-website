@@ -10,34 +10,37 @@
       font-family: "Cormorant Upright", serif;
       font-weight: 500;
       font-size: 1em;
-  }
-}
+      background-color: #FCFCFC;
+    }
 
-@layer utilities {
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
+  }
+  
+  @layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
       display: none;
-  }
+    }
 
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
+    }
   }
-}
-
-.my-bg-image {
-  width: 50%;
+  
+#my-bg-image {
+  @apply w-1/2 h-[950px] bg-cover bg-center absolute right-0;
+  background-image: url('./Images/victor.jpg');
+  /* width: 50%;
   height: 950px;
   background-position: center;
   background-size: cover;
-  background-image: url('./Images/victor.jpg');
   position: absolute;
   right: 0;
-  z-index: -1;
+  z-index: -1; */
 }
 
-.my-bg-image::after {
+#my-bg-image::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -45,6 +48,16 @@
   top: 0;
   left: 0;
   /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+#blog-card-list::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* .cormorant-upright-light {

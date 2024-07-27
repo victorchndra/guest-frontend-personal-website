@@ -83,8 +83,8 @@ const Blog = () => {
             <div className="">
                 <div className="mt-8 px-[30px] flex justify-between items-center font-cormorant-infant">
                     <h1 className=" font-medium text-2xl">All Posts</h1>
-                    <select>
-                        <option>Latest</option>
+                    <select className="select select-bordered max-w-xs select-sm">
+                        <option selected>Latest</option>
                         <option>Oldest</option>
                     </select>
                 </div>

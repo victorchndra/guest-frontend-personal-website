@@ -12,19 +12,11 @@ const ProjectList = () => {
     
     const projects = [
       {
-        name: '"Citycloud" Management System',
+        name: '"Citycloud" Village Management System',
         initial: 'SIMDES',
       },
       {
         name: 'Laundry Cashier',
-        initial: '',
-      },
-      {
-        name: 'Soon...',
-        initial: '',
-      },
-      {
-        name: 'Soon...',
         initial: '',
       },
     ]
