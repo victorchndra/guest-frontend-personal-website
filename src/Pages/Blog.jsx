@@ -49,31 +49,32 @@ const Blog = () => {
             </div>
 
             <div className={`hidden lg:block font-cormorant-infant px-[30px] mt-8`}>
-                <div className={`bg-slate-200 h-72 flex flex-col justify-end p-4`}>
-                    {/* <div>[image]</div> */}
-                    <p className="uppercase text-sm text-red-500 font-bold">Technology</p>
-                    <h1 className="font-medium text-2xl">{posts.data && posts.data[0].title}</h1>
-                    <p className="text-sm mt-2 text-gray-600">{posts.data && moment(posts.data[0].created_at).format('DD/MM/YYYY, HH:mm A')}</p>
+                <div className={`bg-slate-200 h-96 flex flex-col justify-end p-4 bg-cover relative`} 
+                    style={{ backgroundImage: `url(http://127.0.0.1:8000/storage/${posts.data && posts.data[0].cover_img})`, backgroundPosition: 'center' }}>
+
+                    {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div> */}
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/70 from-30% to-black/10 to-50%"></div>
+                    <div className="relative z-10">
+                        <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">Technology</p>
+                        <h1 className="text-white font-medium text-2xl capitalize mt-1">{posts.data && posts.data[0].title}</h1>
+                        <p className="text-sm mt-2 text-gray-300">{posts.data && moment(posts.data[0].created_at).format('DD/MM/YYYY, HH:mm A')}</p>
+                    </div>
                 </div>
             </div>
 
             <div className="flex px-[30px] space-x-4">
-                {/* {pinnedPost.slice(1).map((post, index) => (
-                    <div key={index} className={`hidden lg:block font-cormorant-infant mt-4 space-y-6 w-96`}>
-                        <div className={`bg-slate-200 h-64 flex flex-col justify-end p-4`}>
-                            <div>[image]</div>
-                            <p className="uppercase text-sm text-red-500 font-bold">{post.category}</p>
-                            <h1 className="font-medium text-2xl">{post.title}</h1>
-                            <p className="text-sm mt-2 text-gray-600">{post.created_at}</p>
-                        </div>
-                    </div>
-                ))} */}
                 {posts.data && posts.data.slice(1,5).map((post) => (
                     <div key={post.id} className={`hidden lg:block font-cormorant-infant mt-4 space-y-6 w-96`}>
-                        <div className={`bg-slate-200 h-64 flex flex-col justify-end p-4`}>
-                            <p className="uppercase text-sm text-red-500 font-bold">Technology</p>
-                            <h1 className="font-medium text-2xl">{truncateString(post.title, 30)}</h1>
-                            <p className="text-sm mt-2 text-gray-600">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
+                    
+                        <div className={`bg-slate-200 h-64 flex flex-col justify-end p-4 bg-cover relative`}
+                            style={{ backgroundImage: `url(http://127.0.0.1:8000/storage/${post.cover_img})`, backgroundPosition: 'center' }}>
+                            {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div> */}
+                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/70 from-30% to-black/10 to-50%"></div>
+                            <div className="relative z-10">
+                                <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">Technology</p>
+                                <h1 className="text-white font-medium text-2xl capitalize mt-1">{truncateString(post.title, 30)}</h1>
+                                <p className="text-sm mt-2 text-gray-300">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
+                            </div>
                         </div>
                     </div>
                 ))}
@@ -91,12 +92,12 @@ const Blog = () => {
 
                 {posts.data && posts.data.map((post) => (
                     <div key={post.id} className="font-cormorant-infant flex flex-col items-center justify-center px-[30px] md:flex-row mt-4">
-                        <div className="bg-slate-200 w-full h-48 md:w-[120px] md:h-[100px] md:mr-4">
-                            [image]
+                        <div className="bg-slate-200 w-full h-48 md:w-[120px] md:h-[100px] md:mr-4 bg-cover"
+                            style={{ backgroundImage: `url(http://127.0.0.1:8000/storage/${post.cover_img})`, backgroundPosition: 'center' }}>
                         </div>
                         <div className="border-b-[1px] md:self-start mt-2 w-full">
                             <p className="uppercase text-sm font-bold text-red-500">Technology</p>
-                            <h1 className="font-medium text-2xl">{post.title}</h1>
+                            <h1 className="font-medium text-2xl capitalize mt-1">{truncateString(post.title, 70)}</h1>
                             <p className="text-sm mt-4 mb-1 text-gray-600">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
                         </div>
                     </div>

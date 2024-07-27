@@ -50,16 +50,6 @@
   /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
-#blog-card-list::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 /* .cormorant-upright-light {
   font-family: "Cormorant Upright", serif;
   font-weight: 300;

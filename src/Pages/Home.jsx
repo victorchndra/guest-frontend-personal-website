@@ -59,7 +59,7 @@ const Home = () => {
                 {posts.data ? posts.data.slice(0, 5).map((post) => (
                     <div key={post.id} 
                         className="flex p-4 justify-start items-end min-w-[240px] w-[240px] h-[300px] bg-gray-200 hover:shadow-xl transition-all duration-300 ml-[30px] md:ml-[90px] cursor-pointer bg-cover relative"
-                        style={{ backgroundImage: `url(http://127.0.0.1:8000/storage/${post.cover_img})` }}>
+                        style={{ backgroundImage: `url(http://127.0.0.1:8000/storage/${post.cover_img})`, backgroundPosition: 'center' }}>
                         
                         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div>
                         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/70 from-30% to-black/10 to-50%"></div>
