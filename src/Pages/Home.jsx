@@ -66,7 +66,7 @@ const Home = () => {
                         <div className="flex flex-col relative z-10" >
                             {/* <img src={`http://127.0.0.1:8000/storage/${post.cover_img}`} /> */}
                             <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">Technology</p>
-                            <h1 className="font-medium text-2xl text-white mt-1">{truncateString(post.title, 40)}</h1>
+                            <h1 className="font-medium text-2xl text-white mt-1 capitalize">{truncateString(post.title, 40)}</h1>
                             <p className="text-sm mt-2 text-gray-300">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
                         </div>
                     </div>
