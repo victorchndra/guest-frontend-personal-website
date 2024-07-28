@@ -1,5 +1,3 @@
-// import { ChevronsRight } from "lucide-react"
-
 import moment from "moment"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
@@ -55,7 +53,7 @@ const Blog = () => {
                     {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div> */}
                     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/70 from-30% to-black/10 to-50%"></div>
                     <div className="relative z-10">
-                        <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">Technology</p>
+                        <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">{posts.data && posts.data[0].category.name}</p>
                         <h1 className="text-white font-medium text-2xl capitalize mt-1">{posts.data && posts.data[0].title}</h1>
                         <p className="text-sm mt-2 text-gray-300">{posts.data && moment(posts.data[0].created_at).format('DD/MM/YYYY, HH:mm A')}</p>
                     </div>
@@ -71,8 +69,8 @@ const Blog = () => {
                             {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div> */}
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/70 from-30% to-black/10 to-50%"></div>
                             <div className="relative z-10">
-                                <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">Technology</p>
-                                <h1 className="text-white font-medium text-2xl capitalize mt-1">{truncateString(post.title, 30)}</h1>
+                                <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">{post.category.name}</p>
+                                <h1 className="text-white font-medium text-2xl capitalize mt-1">{truncateString(post.title, 20)}</h1>
                                 <p className="text-sm mt-2 text-gray-300">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
                             </div>
                         </div>
@@ -96,7 +94,7 @@ const Blog = () => {
                             style={{ backgroundImage: `url(http://127.0.0.1:8000/storage/${post.cover_img})`, backgroundPosition: 'center' }}>
                         </div>
                         <div className="border-b-[1px] md:self-start mt-2 w-full">
-                            <p className="uppercase text-sm font-bold text-red-500">Technology</p>
+                            <p className="uppercase text-sm font-bold text-red-500">{post.category.name}</p>
                             <h1 className="font-medium text-2xl capitalize mt-1">{truncateString(post.title, 70)}</h1>
                             <p className="text-sm mt-4 mb-1 text-gray-600">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
                         </div>

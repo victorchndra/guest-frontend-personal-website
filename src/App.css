@@ -44,7 +44,7 @@
 }
   
 #my-bg-image {
-  @apply w-1/2 h-[950px] bg-cover bg-center absolute right-0;
+  @apply md:w-1/2 h-[950px] bg-cover bg-center absolute right-0;
   background-image: url('./Images/victor.jpg');
   /* width: 50%;
   height: 950px;
