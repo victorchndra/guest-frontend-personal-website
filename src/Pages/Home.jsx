@@ -15,11 +15,7 @@ const Home = () => {
             .then((res) => setPosts(res.data))
             .catch((error) => console.error('Error fetching posts:', error))
     }
-
-    useEffect(() => {
-        getPosts()
-    }, [])
-
+    
     const truncateString = (str, num) => {
         if (str.length > num) {
             return str.slice(0, num) + "..."
@@ -28,8 +24,28 @@ const Home = () => {
         }
     }
 
+    useEffect(() => {
+        getPosts()
+        document.getElementById('my_modal_3').showModal()
+    }, [])
+
+    
+
   return (
     <>
+        {/* Starter Modal */}
+        <dialog id="my_modal_3" className="modal font-mono">
+            <div className="modal-box">
+                <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 className="font-bold text-lg">👋 Hi, Thanks for visiting!</h3>
+                <p className="pt-4">Welcome! \(￣︶￣*\))</p>
+                <p className="py-4">I'm so sorry that this website is still under development, so there may be features that are not completed yet ಥ_ಥ</p>
+            </div>
+        </dialog>
+
         <div className="hidden md:block rounded-l-3xl" id="my-bg-image"></div>
         {/* About Section */}
         <section className="px-[30px] pt-[30px] flex flex-col md:px-[90px] md:pt-[30px] relative">
