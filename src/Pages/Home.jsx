@@ -42,7 +42,7 @@ const Home = () => {
                 </form>
                 <h3 className="font-bold text-lg">👋 Hi, Thanks for visiting!</h3>
                 <p className="pt-4">Welcome! \(￣︶￣*\))</p>
-                <p className="py-4">I'm so sorry that this website is still under development, so there may be features that are not completed yet ಥ_ಥ</p>
+                <p className="py-4">I'm so sorry that this website is still under development, so there may be features that are not finished yet ಥ_ಥ</p>
             </div>
         </dialog>
 
@@ -60,7 +60,7 @@ const Home = () => {
         </section>
 
         {/* Projects Section */}
-        <section className="px-[30px] pt-[24px] md:px-[90px] md:w-[650px] relative">
+        <section className="px-[30px] pt-[24px] md:px-[90px] md:w-[720px] relative">
             <div className="flex flex-col">
                 <ProjectList />
             </div>
@@ -81,7 +81,7 @@ const Home = () => {
                         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/70 from-30% to-black/10 to-50%"></div>
                         <div className="flex flex-col relative z-10" >
                             {/* <img src={`http://127.0.0.1:8000/storage/${post.cover_img}`} /> */}
-                            <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">Technology</p>
+                            <p className="uppercase text-sm font-bold text-white bg-red-500 px-2 flex max-w-fit justify-center items-center rounded-lg">{post.category.name}</p>
                             <h1 className="font-medium text-2xl text-white mt-1 capitalize">{truncateString(post.title, 40)}</h1>
                             <p className="text-sm mt-2 text-gray-300">{moment(post.created_at).format('DD/MM/YYYY, HH:mm A')}</p>
                         </div>
